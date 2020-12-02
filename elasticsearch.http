@@ -1,0 +1,25 @@
+PUT localhost:9200/my_index
+Content-Type: application/json
+
+{
+  "settings": {},
+  "mappings": {
+    "properties": {
+      "name": {
+        "type": "text"
+      }
+    }
+  }
+}
+
+###
+POST localhost:8012/admin/uploadMarkDown
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="text.md"
+
+< /Users/gandazhi/Desktop/text.md
+--WebAppBoundary--
+
+###
